@@ -1,0 +1,73 @@
+---
+name: summary
+elements:
+  -
+    locator: !!python/tuple [By.CSS_SELECTOR, "div[class='feature-plaza-box']>div[class='ng-binding']"]
+    text:
+      - !!python/tuple [item1,item1]
+      - !!python/tuple [已开业, Open]
+      - !!python/tuple [基本信息, Basic Info]
+      - !!python/tuple [评级信息, Rating Info]
+  - locator: !!python/tuple [By.CSS_SELECTOR, "div[class='feature-plaza-box']>h4"]
+    text:
+      - !!python/tuple [广场1, Plaza1]
+  - locator: !!python/tuple [By.CSS_SELECTOR, "div[class='feature-plaza-box']>h5"]
+    text:
+      - !!python/tuple [Plaza1, 广场1]
+---
+name: basic_title
+elements:
+  -
+    locator: !!python/tuple [By.CSS_SELECTOR, "div[class='feature-plaza-box']>div[class='basic-info']>div[class='data-row']>span[class='title ng-binding']"]
+    text:
+      - !!python/tuple [建筑类型,Building]
+      - !!python/tuple [商业定位,Price Positioning]
+      - !!python/tuple [业态特点,Category Special]
+      - !!python/tuple [最后走访时间,Last Walk Time]
+      - !!python/tuple [开业时间,Open Date]
+      - !!python/tuple [面积(㎡),Area(㎡)]
+      - !!python/tuple [空店铺数量,Empty Store]
+      - !!python/tuple [地理位置,Geo-Geo(EN)]
+      - !!python/tuple [地址(当地语),Address Local]
+      - !!python/tuple [购物地点所属集团,Group(EN)]
+      - !!python/tuple [评级,Ranking]
+      - !!python/tuple [品牌得分,Brand Points]
+      - !!python/tuple [大小,Size]
+      - !!python/tuple [布局,Design]
+      - !!python/tuple [交通,Transport]
+      - !!python/tuple [定位,Coherence]
+      - !!python/tuple [经营状况,Business Performance]
+      - !!python/tuple [入驻情况,Vacancy Type]
+      - !!python/tuple [总得分,Total Points]
+      - !!python/tuple [备注信息,Note]
+---
+name: basic_value
+elements:
+  -
+    locator: !!python/tuple [By.CSS_SELECTOR, "div[class='feature-plaza-box']>div[class='basic-info']>div[class='data-row']>span[class='text ng-binding']"]
+    text:
+      - !!python/tuple [购物中心,Mall]
+      - !!python/tuple [高端,Premium]
+      - !!python/tuple ['-','-']
+      - !!python/tuple [2020,2020]
+      - !!python/tuple [2008-08-30,2008-08-30]
+      - !!python/tuple [116,511.2㎡,116,511.2㎡]
+      - !!python/tuple [8,8]
+      - !!python/tuple [中等大小,Standard]
+      - !!python/tuple [常规,Standard]
+      - !!python/tuple [非常方便,High Connection]
+      - !!python/tuple [清晰,Yes]
+      - !!python/tuple [良好,Busy]
+      - !!python/tuple [986.00,986.00]
+      - !!python/tuple [位置及周边,LOCATION AND SURROUNDINGS]
+---
+name: links
+elements:
+  -
+    locator: !!python/tuple [By.CSS_SELECTOR, "div[class='ul-links-con']>ul[class='ul-links clearfix']>li"]
+    text:
+      - !!python/tuple [清单(, List(]
+      - !!python/tuple [图(, Plan(]
+      - !!python/tuple [照片, Photo]
+      - !!python/tuple [客流, Traffic]
+

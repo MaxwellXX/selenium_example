@@ -1,0 +1,378 @@
+---
+# self_locator： 默认filter的locator,用于点击
+# txt_find_from， txt_find_type， txt_locator filter： 从根路径还是当前路径查找，查找单个还是多个，定位路径；用于定位子选项的文案，如果为空则说明没有子选项
+# txt_chn，txt_eng：文案的中英文，如果为空则说明没有子选项
+# sshot_locator：测试的filter(元素)用于截屏的locator
+# sshot_name：截屏文件名称，分别要截3个图像：初始状态的，hover的，click的
+title: default
+self_locator: !!python/tuple[By.CLASS_NAME, 'query-thumbnail']
+# 所有filter的帮助说明/Explain 中英文文案
+txt_find_from: parent
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "div[class^='qthumnail-item'] div[class='qt-explain'] div"]
+txt_chn:
+  - 搜索
+  - 全选
+  - 营业状态
+  - 高级过滤
+  # ... 出于隐私考虑，省略掉很多选项
+  - 辐射范围
+  - 标记
+  - 更多
+  - 帮助说明
+txt_eng:
+  - Search
+  - All
+  - Status
+  - Complex Filter
+  - Marker
+  - More
+  - Explanation
+sshot_locator: !!python/tuple[By.CLASS_NAME, 'query-thumbnail']
+sshot_name: filter_default
+---
+title: Search
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Search'],div[class='qthumbnail-item'][title='搜索']"]
+# 搜索/Search - 弹窗 - 搜索结果的中英文文案
+txt_find_from: parent
+txt_find_type: single
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qdropdown-menu qt-search-box'] search-result div[class^='search-result'] strong"]
+txt_chn:
+  - 条结果内搜索
+txt_eng:
+  - result(s)
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='dropdown-menu qt-search-box']"]
+sshot_name: search_filter
+---
+title: Search
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Search'],div[class='qthumbnail-item'][title='搜索']"]
+# '搜索/Search'- 弹窗 - 搜索框 placeholder的中英文文案
+txt_find_from: parent
+txt_find_type: single
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qdropdown-menu] div[class='navbar-search-ipt] input::placeholder"]
+txt_chn:
+  - 搜索
+txt_eng:
+  - Search
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='dropdown-menu qt-search-box']"]
+sshot_name: filter_search
+---
+title: All
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='All'],div[class='qthumbnail-item'][title='全选']"]
+# All没有子选项
+txt_find_from:
+txt_find_type:
+txt_locator:
+txt_chn:
+txt_eng:
+sshot_locator:
+sshot_name:
+---
+title: Mall
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Mall'],div[class='qthumbnail-item'][title='XX中心']"]
+# 没有子选项
+txt_find_from:
+txt_find_type:
+txt_locator:
+txt_chn:
+txt_eng:
+sshot_locator:
+sshot_name:
+---
+title: Department Store
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Department Store'],div[class='qthumbnail-item'][title='YYY']"]
+#YYY没有子选项
+txt_find_from:
+txt_find_type:
+txt_locator:
+txt_chn:
+txt_eng:
+sshot_locator:
+sshot_name:
+---
+title: Hypermarket
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Hypermarket'],div[class='qthumbnail-item'][title='ZZZ']"]
+# ZZZ没有子选项
+txt_find_from:
+txt_find_type:
+txt_locator:
+txt_chn:
+txt_eng:
+sshot_locator:
+sshot_name:
+---
+title: Future
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Future'],div[class='qthumbnail-item'][title='AAA']"]
+# AAA没有子选项
+txt_find_from:
+txt_find_type:
+txt_locator:
+txt_chn:
+txt_eng:
+sshot_locator:
+sshot_name:
+---
+title: Display
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Display'],div[class='qthumbnail-item'][title='显示设置']"]
+# '显示设置/Display'子选项的中英文
+txt_find_from: parent
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class='dropdown-menu'] li a"]
+txt_chn:
+  - 所有项目
+txt_eng:
+  - All
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class='dropdown-menu'][aria-labelledby='plaza-dropdown']"]
+sshot_name: filter_display
+---
+title: Ranking
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Ranking'],div[class='qthumbnail-item'][title='RR'
+#'RR' 子选项的中英文
+txt_find_from: parent
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class='dropdown-menu dropdown-filter'] li a"]
+txt_chn:
+  - 全选
+  # ... 出于隐私考虑，省略掉很多选项
+txt_eng:
+  - All
+  # ... 出于隐私考虑，省略掉很多选项
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class='dropdown-menu dropdown-filter']"]
+sshot_name: filter_ranking
+---
+title: Positioning
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Price Positioning'],div[class='qthumbnail-item'][title='BBB']"]
+# 'BBB'子选项的中英文
+txt_find_from: parent
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class='dropdown-menu dropdown-filter'] li a"]
+txt_chn:
+  - 品牌
+   # ... 出于隐私考虑，省略掉很多选项
+txt_eng:
+  - Brand
+   # ... 出于隐私考虑，省略掉很多选项
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class='dropdown-menu dropdown-filter'][aria-labelledby='plaza-dropdown']"]
+sshot_name: filter_positioning
+---
+title: Special
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Category Special'],div[class='qthumbnail-item'][title='业态特点']"]
+# '业态特点/Category Special'子选项的中英文
+txt_find_from: parent
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class='dropdown-menu dropdown-filter'] li a"]
+txt_chn:
+   # ... 出于隐私考虑，省略掉很多选项
+  - 服务
+txt_eng:
+   # ... 出于隐私考虑，省略掉很多选项
+  - Services
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class='dropdown-menu dropdown-filter'][aria-labelledby='plaza-dropdown']"]
+sshot_name: filter_special
+---
+title: Status
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Status'],div[class='qthumbnail-item'][title='营业状态']"]
+# '营业状态/Status 子选项的中英文
+txt_find_from: parent
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class='dropdown-menu dropdown-filter'] li a"]
+txt_chn:
+  - 已开业
+   # ... 出于隐私考虑，省略掉很多选项
+txt_eng:
+  - Open
+   # ... 出于隐私考虑，省略掉很多选项
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class='dropdown-menu dropdown-filter'][aria-labelledby='geo3-dropdown']"]
+sshot_name: filter_status
+---
+title: Complex
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Complex Filter'],div[class='qthumbnail-item'][title='高级过滤']"]
+# '高级过滤/Complex Filter - 弹窗 的中英文文案
+txt_find_from: root
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, ".filter-container .filter-context div[class^='filter'] span[class^='filter-title']"]
+txt_chn:
+   # ... 出于隐私考虑，省略掉很多选项
+  - 面积
+txt_eng:
+   # ... 出于隐私考虑，省略掉很多选项
+  - Area
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='query-container']"]
+sshot_name: filter_complex
+---
+title: Complex
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Complex Filter'],div[class='qthumbnail-item'][title='高级过滤']"]
+# '高级过滤/Complex Filter, search button的中英文
+txt_find_from: root
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, ".filter-container .filter-context div[class='filter-search'] button"]
+txt_chn:
+  - 搜索
+txt_eng:
+  - Search
+sshot_locator:
+sshot_name:
+---
+title: Complex-plaza-Group
+self_locator: !!python/tuple[By.CSS_SELECTOR, ".filter-container .filter-context div[field-name='plaza_group']"]
+# '高级过滤/Complex Filter -- 商业项目集团/plaza Group 的locator, 中英文
+txt_find_from: root
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class^='dropdown-menu dropdown-filter'][aria-labelledby='plaza-dropdown'] li div p b"]
+txt_chn:
+  - 任意集团
+txt_eng:
+  - Search
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class='dropdown-menu dropdown-filter']"]
+sshot_name: filter_complex_plaza_group
+---
+title: Complex-Store-Sku
+self_locator: !!python/tuple[By.CSS_SELECTOR, ".filter-container .filter-context div[field-name='store_sku']"]
+# '高级过滤/Complex Filter -- 连锁品牌/store_sku 的locator, 中英文
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class^='dropdown-menu dropdown-filter'][aria-labelledby='store-dropdown'] li div div div div h4"]
+txt_chn:
+  - 需要的品牌
+txt_eng:
+  - Search
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class^='dropdown-menu dropdown-filter'][aria-labelledby='store-dropdown']"]
+sshot_name: filter_complex_store_sku
+---
+title: Complex-Open-Date-Uppertxt
+self_locator: !!python/tuple[By.CSS_SELECTOR, ".filter-container .filter-context div[field-name='open_date']"]
+# '高级过滤/Complex Filter -- 开业时间/open_date - 请输入开业时间范围 的locator, 中英文
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class^='dropdown-menu dropdown-filter'][aria-labelledby='openDate-dropdown'] li div p"]
+txt_chn:
+  - 请输入开业时间范围
+txt_eng:
+  - Filter by open date range here
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class^='dropdown-menu dropdown-filter'][aria-labelledby='openDate-dropdown']"]
+sshot_name: filter_complex_open_date
+---
+title: Complex-Open-Date-Startend
+self_locator: !!python/tuple[By.CSS_SELECTOR, ".filter-container .filter-context div[field-name='open_date']"]
+# '高级过滤/Complex Filter -- 开业时间/open_date - 开始、结束, 中英文
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class^='dropdown-menu dropdown-filter'][aria-labelledby='openDate-dropdown'] li div div div div span"]
+txt_chn:
+  - 开始
+  - 结束
+txt_eng:
+  - Start
+  - End
+sshot_locator:
+sshot_name:
+---
+title: Complex-Open-Date-Reset
+self_locator: !!python/tuple[By.CSS_SELECTOR, ".filter-container .filter-context div[field-name='open_date']"]
+# '高级过滤/Complex Filter -- 开业时间/open_date - 重置的locator, 中英文
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class^='dropdown-menu dropdown-filter'][aria-labelledby='openDate-dropdown'] li div div[class='text-right']"]
+txt_chn:
+  - 重置过滤条件
+txt_eng:
+  - reset filters
+sshot_locator:
+sshot_name:
+---
+title: Complex-ifp
+self_locator: !!python/tuple[By.CSS_SELECTOR, ".filter-container .filter-context div[field-name='has_ifp']"]
+# '高级过滤/Complex Filter -- 平面图/has_ifp 的locator, 中英文
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class^='dropdown-menu dropdown-filter'][aria-labelledby='plan-dropdown'] li a"]
+txt_chn:
+  - 所有数据
+   # ... 出于隐私考虑，省略掉很多选项
+txt_eng:
+  - Both
+  - Exist
+  - Not exist
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class^='dropdown-menu dropdown-filter'][aria-labelledby='plan-dropdown']"]
+sshot_name: filter_complex_has_fp
+---
+title: Complex-ifp
+self_locator: !!python/tuple[By.CSS_SELECTOR, ".filter-container .filter-context div[field-name='metrics_club_exists']"]
+# '高级过滤/Complex Filter -- 指标/metrics_club_exists 的locator, 中英文
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class^='dropdown-menu dropdown-filter'][aria-labelledby='metrics-dropdown'] li a"]
+txt_chn:
+   # ... 出于隐私考虑，省略掉很多选项
+  - 所有数据
+txt_eng:
+  - Exist
+  - Not exist
+  - Both
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class^='dropdown-menu dropdown-filter'][aria-labelledby='metrics-dropdown']"]
+sshot_name: filter_complex_metrics_exists
+---
+title: Complex-ifp-area
+self_locator: !!python/tuple[By.CSS_SELECTOR, ".filter-container .filter-context div[field-name='area_filter']"]
+# '高级过滤/Complex Filter -- 面积/area_filter -面积区间的locator, 中英文
+txt_find_type: single
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "#area_filter li p"]
+txt_chn:
+  - 面积区间
+txt_eng:
+  - Filter area between
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "#area_filter"]
+sshot_name: filter_complex_area_filter
+---
+title: Complex-ifp-Minmax
+self_locator: !!python/tuple[By.CSS_SELECTOR, ".filter-container .filter-context div[field-name='area_filter']"]
+# '高级过滤/Complex Filter -- 面积/area_filter - 最大值最小值的locator, 中英文
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "#area_filter div div input"]
+txt_chn:
+  - 最小值
+  - 最大值
+txt_eng:
+  - min
+  - max
+sshot_locator:
+sshot_name:
+---
+title: Complex-ifp-Reset
+self_locator: !!python/tuple[By.CSS_SELECTOR, ".filter-container .filter-context div[field-name='area_filter']"]
+# '高级过滤/Complex Filter -- 面积/area_filter -重置 的locator, 中英文
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "#area_filter div button"]
+txt_chn:
+  - 重置过滤条件
+txt_eng:
+  - reset filters
+sshot_locator:
+sshot_name:
+---
+title: Marker
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='Marker'],div[class='qthumbnail-item'][title='标记']"]
+# marker没有子选项
+txt_find_from:
+txt_find_type:
+txt_locator:
+txt_chn:
+txt_eng:
+sshot_locator:
+sshot_name:
+---
+title: More
+self_locator: !!python/tuple[By.CSS_SELECTOR, "div[class='qthumbnail-item'][title='More'],div[class='qthumbnail-item'][title='更多']"]
+# more的子选项
+txt_find_from: parent
+txt_find_type: multiple
+txt_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class='dropdown-menu' li a]"]
+txt_chn:
+  - 保存
+  - 删除
+  - 分享
+  - 重命名
+  - 设置
+  - 恢复默认过滤
+txt_eng:
+  - Save
+  - Delete
+  - Share
+  - Rename
+  - Setting
+  - Reset Filter
+sshot_locator: !!python/tuple[By.CSS_SELECTOR, "ul[class='dropdown-menu']"
+sshot_name: filter_more

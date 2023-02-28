@@ -1,0 +1,25 @@
+image: ficapy/docker:latest
+
+variables:
+  ALI_SERVER: "Host ali-server \n  User  webse \n CheckHostIp no \n HostName xxx.xx.xxx.xx \n StrictHostKeyChecking no"
+
+stages:
+  - build
+  - deploy
+
+release:
+  stage: deploy
+  only:
+    - master
+#  when: manual
+  before_script:
+    - eval $(ssh-agent -s)
+    - echo "$ALI_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "$ALI_SERVER" > ~/.ssh/config'
+  variables:
+    SERVER: ali-server
+  script:
+    - rsync -r -avz --compress-level 9 --exclude={'__pycache__','allure-report','allure-results'} * $SERVER:/lg/xxx-selenium --delete
+    # - ssh $SERVER "cd /lg/xxx-selenium && UID=${UID} GID=${GID} docker-compose up -d --force-recreate"
+    - ssh $SERVER "cd /lg/xxx-selenium && source /.venv/xxx-selenium/bin/activate  && pip3 install -r requirements.txt"

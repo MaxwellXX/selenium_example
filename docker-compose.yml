@@ -1,0 +1,25 @@
+version: '3.0'
+services:
+  se:
+    image: pyse:v1
+    volumes:
+      - /lg/xxx-selenium:/xxx-selenium
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    working_dir: /xxx-selenium
+    environment:
+      - DISPLAY=:1
+    command: bash -c "tail -f /dev/null"
+    # command: python run.py
+    #command: >
+      #bash -c "python run.py
+      #&& tail -f /dev/null"
+    depends_on:
+      - nginx
+
+  nginx:
+    image: nginx
+    ports:
+     - 8081:80
+    #command: tail -f /dev/null
+    volumes:
+     - /lg/xxx-selenium/allure-report:/usr/share/nginx/html
